@@ -29,7 +29,9 @@
     import Editor from '@tinymce/tinymce-vue';
 
     // Initialize Axios
-    const axios = Axios.create({baseURL: 'http://localhost:2000'})
+    const axios = Axios.create({
+        baseURL: process.env.NODE_ENV === 'development' ? 'http://localhost:2000' : ''
+    })
 
     // Default Image Uploader Callback
     let imageUploaderCallback = () => false;
