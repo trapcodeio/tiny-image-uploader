@@ -22,18 +22,19 @@ class FileController extends $.controller {
             extensions: ['png']
         });
 
-        // for upload errors
-        if(file.error())
+        // Check for upload errors
+        if (file.error())
             return http.res.status(500).json(file.error());
 
         // save to public folder
         await file.saveTo($.path.storage('public'))
 
+        // Return response
         return http.res.status(200).json({
             success: true,
             file: {
                 name: file.name,
-                path: '/storage/'+file.name
+                path: '/storage/' + file.name
             }
         })
     }
