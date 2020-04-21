@@ -1,5 +1,6 @@
-import Vue from 'vue'
-import App from './App.vue'
+import "shred-bootstrap/css/utilities.css";
+import Vue from 'vue';
+import App from './App.vue';
 
 Vue.config.productionTip = false
 
